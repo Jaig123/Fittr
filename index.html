@@ -4,171 +4,146 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Secret Brain Hacks Webinar</title>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Manrope', sans-serif;
+      font-family: 'Poppins', 'Manrope', sans-serif;
+      font-size: 18px;
       margin: 0;
-      background-color: #000;
-      color: #fff;
-      line-height: 1.6;
-    }
-    header {
-      position: sticky;
-      top: 0;
-      background: #000;
-      padding: 10px 20px;
-      text-align: center;
-      z-index: 999;
-    }
-    header a {
-      background: #ccf21f;
-      padding: 10px 20px;
+      background-color: #fff;
       color: #000;
-      font-weight: bold;
-      border-radius: 4px;
-      text-decoration: none;
+    }
+    h1, h2 {
+      font-weight: 700;
+    }
+    .section {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
     }
     .hero {
-      background: url('https://marketing.fittr.com/wp-content/uploads/2023/12/MicrosoftTeams-image-190.webp') no-repeat center center/cover;
-      height: 90vh;
+      background: rgba(204, 242, 31, 0.2);
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
+    }
+    .hero-text {
+      flex: 1;
+      padding: 20px;
+    }
+    .hero-image {
+      flex: 1;
       text-align: center;
-      padding: 2rem;
     }
-    .hero h1 {
-      font-size: 2.5rem;
-      background: rgba(255,255,255,0.9);
-      color: #000;
+    .hero-image img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    .event-details {
+      margin-top: 20px;
+      background: #eee;
+      padding: 10px;
+      border-left: 5px solid #ccf21f;
+    }
+    .btn {
+      background: #28a745;
+      color: #fff;
+      padding: 12px 24px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      margin-top: 20px;
+      display: inline-block;
+      font-size: 1rem;
+    }
+    .btn::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.3);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { left: -100%; }
+      50% { left: 100%; }
+      100% { left: 100%; }
+    }
+    .floating-cta {
+      position: fixed;
+      top: 50%;
+      right: 0;
+      background: #28a745;
+      color: #fff;
+      padding: 20px;
+      border-radius: 10px 0 0 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 9999;
+      max-width: 280px;
+    }
+    .floating-cta h3 {
+      margin: 0 0 10px 0;
+      font-size: 1.1rem;
+    }
+    .price-tag {
+      font-size: 1.5rem;
+      margin: 10px 0;
+    }
+    .price-tag del {
+      color: #ff4444;
+      margin-right: 10px;
+    }
+    .why-section {
+      background: rgba(255, 192, 203, 0.2);
+    }
+    .blue-section {
+      background: rgba(173, 216, 230, 0.2);
+    }
+    .grid-points {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .grid-points div {
+      background: #f9f9f9;
+      padding: 15px;
+      border-left: 5px solid green;
+      border-radius: 5px;
+    }
+    .faq details {
+      margin-bottom: 1rem;
+      background: rgba(144, 238, 144, 0.2);
       padding: 1rem;
-      border-radius: 8px;
+      border: 2px solid green;
+      border-radius: 5px;
+      transition: background 0.3s ease;
     }
-    section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
+    .faq details[open] {
+      background: rgba(144, 238, 144, 0.6);
+    }
+    .faq summary {
+      font-weight: bold;
+      cursor: pointer;
     }
     .form-section iframe {
       width: 100%;
       height: 800px;
       border: none;
     }
-    .highlight-box {
-      background-color: #222;
-      padding: 1rem;
-      margin: 1rem 0;
-      border-left: 5px solid #ccf21f;
-    }
-    .faq details {
-      margin-bottom: 1rem;
-      background: #111;
-      padding: 1rem;
-      border: 1px solid #333;
-    }
-    .faq summary {
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .founder-section {
-      text-align: center;
-    }
-    .founder-section img {
-      width: 300px;
-      max-width: 100%;
-      border-radius: 8px;
-      margin-top: 20px;
-    }
-    footer {
-      background: #111;
-      color: #888;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-    }
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 1.5rem;
-      }
-      header a {
-        display: block;
-        margin: auto;
-      }
-    }
   </style>
 </head>
 <body>
-  <header>
-    <a href="#form">Register Now</a>
-  </header>
-
-  <section class="hero">
-    <h1>Learn <strong>Secret Brain Hacks</strong> To Stay Consistent With Your Fitness Goals</h1>
-  </section>
-
-  <section class="founder-section">
-    <h2 style="color:#ccf21f">Meet Your Host: Jitendra Chouksey</h2>
-    <p>Founder of Fittr | Author | Speaker | Community Builder</p>
-    <img src="https://marketing.fittr.com/wp-content/uploads/2025/06/JC_1-1-1.webp" alt="Jitendra Chouksey - Founder of Fittr" />
-  </section>
-
-  <section>
-    <h2 style="color:#ccf21f">Webinar Details</h2>
-    <div class="highlight-box">
-      📅 <strong>Date:</strong> 22nd June<br>
-      ⏰ <strong>Time:</strong> 11:30 AM<br>
-      💻 <strong>Platform:</strong> Zoom<br>
-      🕑 <strong>Duration:</strong> 2 Hours
-    </div>
-  </section>
-
-  <section>
-    <h2 style="color:#ccf21f">Why You Cannot Miss This Webinar</h2>
-    <ul>
-      <li>Create a lifestyle where fitness feels natural, not a burden.</li>
-      <li>Break free from cycles of motivation and guilt.</li>
-      <li>Build automatic healthy habits.</li>
-      <li>Gain mental resilience to handle life’s ups and downs.</li>
-      <li>Feel in control, confident, and proud of your fitness journey.</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2 style="color:#ccf21f">What You'll Learn</h2>
-    <ul>
-      <li>The real meaning of discipline (and how to build it)</li>
-      <li>How to hack your brain’s reward system</li>
-      <li>Micro-discipline hacks to fight cravings, distractions</li>
-      <li>Designing an environment that makes fitness easy</li>
-      <li>Emotional discipline secrets for stress and guilt</li>
-    </ul>
-  </section>
-
-  <section class="faq">
-    <h2 style="color:#ccf21f">FAQs</h2>
-    <details>
-      <summary>I’ve tried plans before and failed. How is this different?</summary>
-      <p>This webinar focuses on mindset and brain science—not diets or workouts—so you can stay consistent long-term.</p>
-    </details>
-    <details>
-      <summary>I’m too busy. Will this work for me?</summary>
-      <p>Yes. You’ll learn micro-discipline strategies designed for chaotic, real-life schedules.</p>
-    </details>
-    <details>
-      <summary>Do I need gym experience?</summary>
-      <p>No. This is for beginners and advanced fitness enthusiasts alike.</p>
-    </details>
-  </section>
-
-  <section class="form-section" id="form">
-    <h2>Register for the Webinar</h2>
-    <p>Fill out the form below to get your spot:</p>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScz9RCEY7E7GkW4XX4jzdsmEf227hxFOH7FYJcQDaIzbHZCdg/viewform?embedded=true">Loading…</iframe>
-  </section>
-
-  <footer>
-    &copy; 2025 Fittr. This is a recreated version for educational and functional replication.
-  </footer>
+  <div class="floating-cta">
+    <h3>🎉 Act Fast – Limited Time Offer!</h3>
+    <div class="price-tag"><del>₹999</del> <strong>₹299</strong></div>
+    <a href="#form" class="btn">Register Now</a>
+  </div>
 </body>
 </html>
